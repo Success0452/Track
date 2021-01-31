@@ -7,87 +7,13 @@
     android:background="@color/purple_500"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv1"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_15ssp"
-        android:text="@string/notes"
-        android:fontFamily="@font/manrope_bold"
-        android:paddingStart="@dimen/_10ssp"
-        android:paddingTop="@dimen/_10ssp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"/>
-
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10ssp"
-        android:background="@drawable/background"
-        android:searchIcon="@drawable/ic_search"
-        android:queryHint="@string/search"
-        android:iconifiedByDefault="false"
-        android:theme="@style/ThemeOverlay.search"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv1"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/search_view"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recycler_view"
-        android:layout_margin="@dimen/_10ssp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_view"/>
-
-    <LinearLayout
-        android:id="@+id/l1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="@dimen/_10ssp"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:src="@drawable/ic_tick"
-             app:tint="@color/white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_image"
-            android:layout_marginStart="@dimen/_10ssp"
-            android:layout_marginEnd="@dimen/_10ssp"
-            app:tint="@color/white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/link"
-            app:tint="@color/white" />
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_add"
-        android:tint="@color/white"
-        android:background="@color/purple_700"
-        android:layout_marginEnd="@dimen/_20ssp"
-        android:layout_marginBottom="@dimen/_20ssp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
