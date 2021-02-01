@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.famous.track.database.NotesDatabase
+import com.famous.track.databinding.FragmentCreateNoteBinding
+import com.famous.track.databinding.FragmentHomeBinding
 import com.famous.track.entites.Notes
 import kotlinx.android.synthetic.main.fragment_create_note.*
 import kotlinx.coroutines.launch
@@ -16,6 +18,10 @@ import java.util.*
 
 
 class CreateNoteFragment : BaseFragment() {
+
+//    private var _binding : FragmentCreateNoteBinding? = null
+//    private val binding get() = _binding!!
+
     var currentDate:String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +29,15 @@ class CreateNoteFragment : BaseFragment() {
 
         }
     }
+
+//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+//                              savedInstanceState: Bundle?): View {
+//        // Inflate the layout for this fragment
+//        _binding = FragmentCreateNoteBinding.inflate(inflater, container, false)
+//
+//
+//        return binding.root
+//    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -38,6 +53,7 @@ class CreateNoteFragment : BaseFragment() {
                     arguments = Bundle().apply {
 
                     }
+
                 }
     }
 
@@ -53,7 +69,7 @@ class CreateNoteFragment : BaseFragment() {
 
             saveNote()
         }
-        imgBack.setOnClickListener {
+       imgBack.setOnClickListener {
             replaceFragment(HomeFragment.newInstance(), false)
         }
     }
@@ -98,7 +114,7 @@ class CreateNoteFragment : BaseFragment() {
         {
             fragmentTransition.setCustomAnimations(android.R.anim.slide_out_right, android.R.anim.slide_in_left)
         }
-        fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName)
+        fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName).commit()
     }
 
 }

@@ -5,10 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.famous.track.R
+import com.famous.track.databinding.FragmentHomeBinding
+import com.famous.track.databinding.ItemRvNotesBinding
 import com.famous.track.entites.Notes
 import kotlinx.android.synthetic.main.item_rv_notes.view.*
 
+
 class NotesAdapter(val arrList: List<Notes>) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         return NotesViewHolder(

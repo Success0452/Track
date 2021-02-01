@@ -11,11 +11,16 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.famous.track.R
 import com.famous.track.adapter.NotesAdapter
 import com.famous.track.database.NotesDatabase
+import com.famous.track.databinding.FragmentHomeBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_home.*
+
 import kotlinx.coroutines.launch
 
 class HomeFragment : BaseFragment() {
+//
+//    private var _binding : FragmentHomeBinding? = null
+//    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +29,20 @@ class HomeFragment : BaseFragment() {
         }
     }
 
+//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+//                              savedInstanceState: Bundle?): View {
+//        // Inflate the layout for this fragment
+//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
+
+
+//        return binding.root
+//    }
 
     companion object {
         @JvmStatic
@@ -45,16 +59,33 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recycler_view.setHasFixedSize(true)
-
-        recycler_view.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-
         launch {
             context?.let {
                 var notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
                 recycler_view.adapter = NotesAdapter(notes)
             }
         }
+        recycler_view.setHasFixedSize(true)
+
+        recycler_view.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+
+
+//        launch {
+//            val operation = async(Dispatchers.IO) {
+//                settingsInteractor.getStationSearchCountry().let {
+//                    countryName = it.name
+//                }
+//                settingsInteractor.getStationSearchRegion().let {
+//                    regionName = it.name
+//                }
+//            }
+//            operation.await() // wait for result of I/O operation without blocking the main thread
+//
+//            // update views
+//            country.updateCaption(countryName)
+//            region.updateCaption(regionName)
+//        }
         fabBtnCreateNote.setOnClickListener {
 
             replaceFragment(CreateNoteFragment.newInstance(), true)
@@ -70,6 +101,8 @@ class HomeFragment : BaseFragment() {
         {
             fragmentTransition.setCustomAnimations(android.R.anim.slide_out_right, android.R.anim.slide_in_left)
         }
-        fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName)
+        fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName).commit()
     }
+
+
 }
