@@ -14,6 +14,8 @@ import com.famous.track.database.NotesDatabase
 import com.famous.track.databinding.FragmentHomeBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 
 import kotlinx.coroutines.launch
@@ -23,6 +25,7 @@ class HomeFragment : BaseFragment() {
 //    private var _binding : FragmentHomeBinding? = null
 //    private val binding get() = _binding!!
 
+//    private val ioScope = CoroutineScope(Dispatchers.IO)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
@@ -60,7 +63,7 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       GlobalScope.launch {
+        launch {
             context?.let {
                 val notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
                 recycler_view.adapter = NotesAdapter(notes)
