@@ -81,6 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
 <View
+    android:id="@+id/colorView"
     android:layout_width="@dimen/_5ssp"
     android:layout_height="match_parent"
     android:background="@color/blue"
@@ -118,6 +119,22 @@
         android:textColor="@color/white"
         android:inputType="textMultiLine"
         android:hint="@string/notes_desc" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_24ssp"
+            android:layout_height="@dimen/_24ssp"
+            app:tint="@color/white"
+            android:src="@drawable/ic_more"/>
+    </FrameLayout>
 
 
 

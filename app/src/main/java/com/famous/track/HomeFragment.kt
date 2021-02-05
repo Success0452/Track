@@ -63,12 +63,12 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        launch {
-            context?.let {
-                val notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
-                recycler_view.adapter = NotesAdapter(notes)
-            }
-        }
+//        launch {
+//            context?.let {
+//                val notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
+//                recycler_view.adapter = NotesAdapter(notes)
+//            }
+//        }
 
         recycler_view.setHasFixedSize(true)
 
