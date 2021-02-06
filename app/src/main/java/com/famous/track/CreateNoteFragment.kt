@@ -144,7 +144,7 @@ class CreateNoteFragment : BaseFragment() {
         override fun onReceive(context: Context?, intent: Intent?) {
             var actionColor = intent!!.getStringExtra("actionColor")
 
-            when (actionColor!!)
+            when (actionColor)
             {
                 "Blue" -> {
                     selectedColor = intent.getStringExtra("selectedColor")!!

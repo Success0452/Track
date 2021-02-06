@@ -36,6 +36,8 @@ class Notes : Serializable {
 
 
     override fun toString(): String {
-        return "$title : $dateTime "
+        return "$title : $dateTime"
     }
 }
+
+// : $subTitle : $color : $webLink : $imgPath : $noteText
