@@ -8,62 +8,26 @@
     android:background="@color/purple_500"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/layoutHeader"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="@dimen/_40ssp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="@dimen/_10ssp"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_tick"
-            app:tint="@color/white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_image"
-            android:layout_marginStart="@dimen/_10ssp"
-            android:layout_marginEnd="@dimen/_10ssp"
-            app:tint="@color/white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/link"
-            app:tint="@color/white" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_more"
-                android:layout_gravity="end"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/_10ssp"
-                android:layout_marginEnd="@dimen/_10ssp"
-                app:tint="@color/white" />
-
-        </RelativeLayout>
-
-
-
-
-    </LinearLayout>
+            android:id="@+id/imgMore"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_24ssp"
+            android:layout_height="@dimen/_24ssp"
+            android:src="@drawable/img_bar"/>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/_5ssp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <FrameLayout
@@ -104,7 +68,6 @@
                 app:tint="@color/white" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -203,7 +166,56 @@
 
         </FrameLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomof="@id/etNoteTitle"
+            app:layout_constraintStart_toStartof="parent"
+            app:layout_constraintEnd_toEndof="parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="textEnd"
+            android:paddingEnd="@dimen/_10ssp"
+            android:text="Pick Color"
+            android:fontFamily="@font/manrope_bold"
+            android:maxLines="1"
+            android:ellipsize="end"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image"
+            android:layout_marginStart="@dimen/_5ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomof="@id/etNoteTitle"
+            app:layout_constraintStart_toStartof="parent"
+            app:layout_constraintEnd_toEndof="parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:text="Add Image"
+            android:fontFamily="@font/manrope_bold"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+    </LinearLayout>
+
 
 </LinearLayout>

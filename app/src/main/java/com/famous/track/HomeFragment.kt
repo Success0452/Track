@@ -14,10 +14,6 @@ import com.famous.track.database.NotesDatabase
 import com.famous.track.databinding.FragmentHomeBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-
 import kotlinx.coroutines.launch
 
 class HomeFragment : BaseFragment() {
