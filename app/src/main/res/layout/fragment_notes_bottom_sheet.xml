@@ -78,7 +78,7 @@
             <View
                 android:layout_width="@dimen/_24ssp"
                 android:layout_height="@dimen/_24ssp"
-                android:background="@drawable/note_color_3"/>
+                android:background="@drawable/note_color_4"/>
             <ImageView
                 android:id="@+id/imgNote3"
                 android:layout_width="@dimen/_16ssp"
@@ -97,7 +97,7 @@
             <View
                 android:layout_width="@dimen/_24ssp"
                 android:layout_height="@dimen/_24ssp"
-                android:background="@drawable/note_color_4"/>
+                android:background="@drawable/note_color_5"/>
             <ImageView
                 android:id="@+id/imgNote4"
                 android:layout_width="@dimen/_16ssp"
@@ -117,7 +117,7 @@
             <View
                 android:layout_width="@dimen/_24ssp"
                 android:layout_height="@dimen/_24ssp"
-                android:background="@drawable/note_color_5"/>
+                android:background="@drawable/note_color_6"/>
             <ImageView
                 android:id="@+id/imgNote5"
                 android:layout_width="@dimen/_16ssp"
@@ -136,7 +136,7 @@
             <View
                 android:layout_width="@dimen/_24ssp"
                 android:layout_height="@dimen/_24ssp"
-                android:background="@drawable/note_color_6"/>
+                android:background="@drawable/note_color_7"/>
             <ImageView
                 android:id="@+id/imgNote6"
                 android:layout_width="@dimen/_16ssp"
@@ -156,7 +156,8 @@
             <View
                 android:layout_width="@dimen/_24ssp"
                 android:layout_height="@dimen/_24ssp"
-                android:background="@drawable/note_color_7"/>
+                android:visibility="gone"
+                android:background="@drawable/note_color_3"/>
             <ImageView
                 android:id="@+id/imgNote7"
                 android:layout_width="@dimen/_16ssp"
@@ -169,9 +170,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomof="@id/etNoteTitle"
-            app:layout_constraintStart_toStartof="parent"
-            app:layout_constraintEnd_toEndof="parent"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
             android:textAlignment="textEnd"
@@ -206,9 +204,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomof="@id/etNoteTitle"
-            app:layout_constraintStart_toStartof="parent"
-            app:layout_constraintEnd_toEndof="parent"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
             android:text="Add Image"

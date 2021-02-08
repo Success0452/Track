@@ -5,6 +5,7 @@ import com.famous.track.HomeFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -12,16 +13,21 @@ import com.famous.track.R
 import com.famous.track.adapter.NotesAdapter
 import com.famous.track.database.NotesDatabase
 import com.famous.track.databinding.FragmentHomeBinding
+import com.famous.track.entites.Notes
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.launch
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : BaseFragment() {
 //
 //    private var _binding : FragmentHomeBinding? = null
 //    private val binding get() = _binding!!
-
 //    private val ioScope = CoroutineScope(Dispatchers.IO)
+
+    var arrNotes = ArrayList<Notes>()
+    var notesAdapter: NotesAdapter = NotesAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
@@ -59,37 +65,62 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        launch {
-            context?.let {
-                val notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
-                recycler_view.adapter = NotesAdapter(notes)
-            }
-        }
-
         recycler_view.setHasFixedSize(true)
 
         recycler_view.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
+        launch {
+            context?.let {
+                val notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
+                notesAdapter!!.setData(notes)
+                arrNotes = notes as ArrayList<Notes>
+                recycler_view.adapter = notesAdapter
+            }
+        }
+
+        notesAdapter!!.setOnClickListener(onClicked)
 
 
-//        launch {
-//            val operation = async(Dispatchers.IO) {
-//                settingsInteractor.getStationSearchCountry().let {
-//                    countryName = it.name
-//                }
-//                settingsInteractor.getStationSearchRegion().let {
-//                    regionName = it.name
-//                }
-//            }
-//            operation.await() // wait for result of I/O operation without blocking the main thread
-//
-//            // update views
-//            country.updateCaption(countryName)
-//            region.updateCaption(regionName)
-//        }
         fabBtnCreateNote.setOnClickListener {
 
             replaceFragment(CreateNoteFragment.newInstance(), true)
+        }
+
+        search_view.setOnQueryTextListener( object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+
+                var tempArr = ArrayList<Notes>()
+
+                for (arr in arrNotes){
+                    if (arr.title!!.toLowerCase(Locale.getDefault()).contains(p0.toString())){
+                        tempArr.add(arr)
+                    }
+                }
+
+                notesAdapter.setData(tempArr)
+                notesAdapter.notifyDataSetChanged()
+                return true
+            }
+
+        })
+
+
+    }
+    private val onClicked = object :NotesAdapter.OnItemClickListener{
+        override fun onClicked(notesId: Int) {
+
+
+            var fragment :Fragment
+            var bundle = Bundle()
+            bundle.putInt("noteId",notesId)
+            fragment = CreateNoteFragment.newInstance()
+            fragment.arguments = bundle
+
+            replaceFragment(fragment,false)
         }
 
     }

@@ -12,9 +12,12 @@ import com.famous.track.entites.Notes
 import kotlinx.android.synthetic.main.item_rv_notes.view.*
 
 
-class NotesAdapter(val arrList: List<Notes>) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter() :
+        RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
 
+    var listener:OnItemClickListener? = null
+    var arrList = ArrayList<Notes>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         return NotesViewHolder(
@@ -39,10 +42,19 @@ class NotesAdapter(val arrList: List<Notes>) : RecyclerView.Adapter<NotesAdapter
     override fun getItemCount(): Int {
         return arrList.size
     }
+    fun setData(arrNotesList: List<Notes>){
+        arrList = arrNotesList as ArrayList<Notes>
+    }
+    fun setOnClickListener(listener1: OnItemClickListener){
+        listener = listener1
+    }
 
     class NotesViewHolder(view:View) : RecyclerView.ViewHolder(view)
     {
 
+    }
+    interface OnItemClickListener{
+        fun onClicked(noteId:Int)
     }
 
 }
