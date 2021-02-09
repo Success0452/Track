@@ -35,6 +35,7 @@ import java.util.*
 import java.util.jar.Manifest
 import kotlinx.android.synthetic.main.fragment_create_note.imgMore as imgMore1
 import kotlinx.android.synthetic.main.fragment_notes_bottom_sheet.layoutImage as layoutImage1
+import kotlinx.android.synthetic.main.fragment_notes_bottom_sheet.layoutWebUrl as layoutWebUrl1
 
 
 class CreateNoteFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, EasyPermissions.RationaleCallbacks {

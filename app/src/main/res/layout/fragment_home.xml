@@ -59,6 +59,7 @@
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:visibility="gone"
           android:src="@drawable/ic_tick"
           app:tint="@color/white" />
 
@@ -68,11 +69,13 @@
           android:src="@drawable/ic_image"
           android:layout_marginStart="@dimen/_10ssp"
           android:layout_marginEnd="@dimen/_10ssp"
+          android:visibility="gone"
           app:tint="@color/white" />
 
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:visibility="gone"
           android:src="@drawable/link"
           app:tint="@color/white" />
 
@@ -82,13 +85,13 @@
        android:id="@+id/fabBtnCreateNote"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
+       android:layout_marginBottom="@dimen/_20sdp"
+       android:background="@color/purple_700"
        android:src="@drawable/ic_add"
        android:tint="@color/white"
-       android:background="@color/purple_700"
-       android:layout_marginEnd="@dimen/_20ssp"
-       android:layout_marginBottom="@dimen/_20ssp"
        app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent" />
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
 
 
 

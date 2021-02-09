@@ -90,7 +90,6 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
 
             imgNote1.setImageResource(R.drawable.ic_tick)
             imgNote2.setImageResource(0)
-            imgNote3.setImageResource(0)
             imgNote4.setImageResource(0)
             imgNote5.setImageResource(0)
             imgNote6.setImageResource(0)
@@ -107,7 +106,6 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
         fNote2.setOnClickListener {
             imgNote1.setImageResource(0)
             imgNote2.setImageResource(R.drawable.ic_tick)
-            imgNote3.setImageResource(0)
             imgNote4.setImageResource(0)
             imgNote5.setImageResource(0)
             imgNote6.setImageResource(0)
@@ -121,11 +119,10 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
             LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
 
         }
-        fNote3.setOnClickListener {
+        fNote4.setOnClickListener {
             imgNote1.setImageResource(0)
             imgNote2.setImageResource(0)
-            imgNote3.setImageResource(R.drawable.ic_tick)
-            imgNote4.setImageResource(0)
+            imgNote4.setImageResource(R.drawable.ic_tick)
             imgNote5.setImageResource(0)
             imgNote6.setImageResource(0)
             imgNote7.setImageResource(0)
@@ -140,7 +137,6 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
         fNote4.setOnClickListener {
             imgNote1.setImageResource(0)
             imgNote2.setImageResource(0)
-            imgNote3.setImageResource(0)
             imgNote4.setImageResource(R.drawable.ic_tick)
             imgNote5.setImageResource(0)
             imgNote6.setImageResource(0)
@@ -158,7 +154,6 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
 
             imgNote1.setImageResource(0)
             imgNote2.setImageResource(0)
-            imgNote3.setImageResource(0)
             imgNote4.setImageResource(0)
             imgNote5.setImageResource(R.drawable.ic_tick)
             imgNote6.setImageResource(0)
@@ -176,7 +171,6 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
 
             imgNote1.setImageResource(0)
             imgNote2.setImageResource(0)
-            imgNote3.setImageResource(0)
             imgNote4.setImageResource(0)
             imgNote5.setImageResource(0)
             imgNote6.setImageResource(R.drawable.ic_tick)
@@ -193,7 +187,6 @@ class NoteBottomSheetFragment : BottomSheetDialogFragment() {
         fNote7.setOnClickListener {
             imgNote1.setImageResource(0)
             imgNote2.setImageResource(0)
-            imgNote3.setImageResource(0)
             imgNote4.setImageResource(0)
             imgNote5.setImageResource(0)
             imgNote6.setImageResource(0)

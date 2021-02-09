@@ -21,7 +21,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class HomeFragment : BaseFragment() {
-//
+
 //    private var _binding : FragmentHomeBinding? = null
 //    private val binding get() = _binding!!
 //    private val ioScope = CoroutineScope(Dispatchers.IO)
