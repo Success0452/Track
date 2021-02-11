@@ -151,7 +151,7 @@ class CreateNoteFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, 
 
 
         imgMore.setOnClickListener{
-            var noteBottomSheetFragment = NoteBottomSheetFragment.newInstance()
+            var noteBottomSheetFragment = NoteBottomSheetFragment.newInstance(noteId)
             noteBottomSheetFragment.show(requireActivity().supportFragmentManager, "Bottom Bottom Sheet Fragment")
         }
 
