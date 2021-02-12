@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase
 import com.famous.track.dao.NoteDao
 import com.famous.track.entites.Notes
 
-@Database(entities = [Notes::class], version = 1, exportSchema = false)
-abstract class NotesDatabase: RoomDatabase() {
+    @Database(entities = [Notes::class], version = 1, exportSchema = false)
+    abstract class NotesDatabase: RoomDatabase() {
 
     companion object{
         var noteDatabase : NotesDatabase? = null
