@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
     tools:context=".HomeFragment">
 
    <TextView
@@ -15,41 +14,43 @@
        android:textSize="@dimen/_15ssp"
        android:text="@string/notes"
        android:fontFamily="@font/manrope_bold"
+       android:textAlignment="center"
        android:paddingStart="@dimen/_10ssp"
        android:paddingTop="@dimen/_10ssp"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintStart_toStartOf="parent"
-       android:textColor="@color/white"/>
+       android:textColor="@color/purple_700"/>
 
    <SearchView
+       android:id="@+id/search_view"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/_20ssp"
        android:layout_margin="@dimen/_10ssp"
        android:background="@drawable/background"
-       android:searchIcon="@drawable/ic_search"
-       android:queryHint="@string/search"
+       android:visibility="gone"
        android:iconifiedByDefault="false"
+       android:queryHint="@string/search"
+       android:searchIcon="@drawable/ic_search"
        android:theme="@style/ThemeOverlay.search"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/tv1"
+       app:layout_constraintBottom_toTopOf="@+id/l1"
        app:layout_constraintEnd_toEndOf="parent"
-       android:id="@+id/search_view"
-       />
+       app:layout_constraintStart_toStartOf="parent" />
+
    <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recycler_view"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:id="@+id/recycler_view"
        android:layout_margin="@dimen/_10ssp"
-       app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/search_view"/>
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
    <LinearLayout
        android:id="@+id/l1"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:background="@color/purple_200"
+       android:background="@color/white"
        android:orientation="horizontal"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintBottom_toBottomOf="parent"
@@ -81,15 +82,15 @@
 
    </LinearLayout>
 
-   <com.google.android.material.floatingactionbutton.FloatingActionButton
+   <ImageView
        android:id="@+id/fabBtnCreateNote"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginBottom="@dimen/_20sdp"
+       android:layout_width="100dp"
+       android:layout_height="@dimen/_20sdp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/shape"
        android:backgroundTint="@color/purple_700"
        android:src="@drawable/ic_add"
-       android:tint="@color/white"
-       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintBottom_toBottomOf="@+id/l1"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent" />
 

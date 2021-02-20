@@ -5,8 +5,8 @@
     android:orientation="vertical"
     app:behavior_peekHeight="40dp"
     android:id="@+id/layoutBottomSheet"
+    android:background="@color/white"
     app:layout_behavior="@string/bottom_sheet_behavior"
-    android:background="@color/purple_500"
     android:layout_height="wrap_content">
 
     <FrameLayout
@@ -14,6 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="@dimen/_40sdp">
 
         <ImageView
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/_5sdp"
         android:gravity="center"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <FrameLayout
@@ -152,7 +154,7 @@
             app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_700"
             android:textSize="@dimen/_12ssp"
             android:text="Pick Color"
             android:fontFamily="@font/manrope_bold"
@@ -168,8 +170,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:gravity="center"
+
         android:layout_margin="@dimen/_10sdp"
         android:orientation="horizontal">
 
@@ -180,7 +183,7 @@
             android:src="@drawable/ic_image"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            app:tint="@color/white"/>
+            app:tint="@color/purple_700"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -188,7 +191,7 @@
             app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_700"
             android:textSize="@dimen/_12ssp"
             android:text="Add Image"
             android:fontFamily="@font/manrope_bold"
@@ -206,7 +209,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:gravity="center"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
@@ -220,7 +223,7 @@
             android:src="@drawable/link"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            app:tint="@color/white" />
+            app:tint="@color/purple_700" />
 
         <TextView
             android:layout_width="match_parent"
@@ -228,7 +231,7 @@
             app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_700"
             android:textSize="@dimen/_12ssp"
             android:text="Add Web Link"
             android:fontFamily="@font/manrope_bold"

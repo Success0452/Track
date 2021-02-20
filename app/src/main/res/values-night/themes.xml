@@ -19,7 +19,7 @@
         <!-- Primary brand color. -->
         <item name="android:editTextColor">@color/white</item>
 
-        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColorHint">@color/purple_700</item>
 
     </style>
 </resources>

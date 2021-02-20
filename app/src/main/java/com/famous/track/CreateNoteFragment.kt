@@ -289,46 +289,58 @@ class CreateNoteFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, 
             Toast.makeText(requireContext(),"Url is not valid",Toast.LENGTH_SHORT).show()
         }
     }
-    private val BroadcastReceiver : BroadcastReceiver = object :BroadcastReceiver()
-    {
-        override fun onReceive(context: Context?, intent: Intent?) {
-            var actionColor = intent!!.getStringExtra("action")
+    private val BroadcastReceiver : BroadcastReceiver = object :BroadcastReceiver(){
+        override fun onReceive(p0: Context?, p1: Intent?) {
 
-            when (actionColor)
-            {
+            var actionColor = p1!!.getStringExtra("action")
+
+            when(actionColor!!){
+
                 "Blue" -> {
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
 
                 "Yellow" -> {
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
+
 
                 "Purple" -> {
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
+
 
                 "Green" -> {
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
+
 
                 "Orange" -> {
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
 
+
                 "Black" -> {
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
-                "image" -> {
+
+                "Image" ->{
                     readStorageTask()
                     layoutWebUrl.visibility = View.GONE
                 }
+
                 "WebUrl" ->{
                     layoutWebUrl.visibility = View.VISIBLE
                 }
@@ -337,20 +349,82 @@ class CreateNoteFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, 
                     deleteNote()
                 }
 
-                else ->
-                {
+
+                else -> {
                     layoutImage.visibility = View.GONE
                     imgNote.visibility = View.GONE
                     layoutWebUrl.visibility = View.GONE
-                    selectedColor = intent.getStringExtra("selectedColor")!!
+                    selectedColor = p1.getStringExtra("selectedColor")!!
                     colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
                 }
-
-
             }
         }
 
     }
+
+    //    private val BroadcastReceiver : BroadcastReceiver = object :BroadcastReceiver()
+//    {
+//        override fun onReceive(context: Context?, intent: Intent?) {
+//            var actionColor = intent!!.getStringExtra("action")
+//
+//            when (actionColor!!)
+//            {
+//                "Blue" -> {
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//
+//                "Yellow" -> {
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//
+//                "Purple" -> {
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//
+//                "Green" -> {
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//
+//                "Orange" -> {
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//
+//                "Black" -> {
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//                "image" -> {
+//                    readStorageTask()
+//                    layoutWebUrl.visibility = View.GONE
+//                }
+//                "WebUrl" ->{
+//                    layoutWebUrl.visibility = View.VISIBLE
+//                }
+//                "DeleteNote" -> {
+//                    //delete note
+//                    deleteNote()
+//                }
+//
+//                else ->
+//                {
+//                    layoutImage.visibility = View.GONE
+//                    imgNote.visibility = View.GONE
+//                    layoutWebUrl.visibility = View.GONE
+//                    selectedColor = intent.getStringExtra("selectedColor")!!
+//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+//                }
+//
+//
+//            }
+//        }
+//
+//    }
     override fun onDestroy() {
         LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(BroadcastReceiver)
         super.onDestroy()
