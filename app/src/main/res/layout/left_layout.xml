@@ -6,8 +6,9 @@
     app:behavior_peekHeight="40dp"
     android:id="@+id/layoutBottomSheet"
     android:background="@color/white"
+    android:layout_marginStart="@dimen/_10ssp"
     app:layout_behavior="@string/bottom_sheet_behavior"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <FrameLayout
         app:layout_constraintStart_toStartOf="parent"
@@ -19,23 +20,23 @@
 
         <ImageView
             android:id="@+id/imgMore"
-            android:layout_gravity="center"
             android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/img_bar"/>
+            android:layout_height="25dp"
+            android:src="@drawable/img_bar" />
     </FrameLayout>
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/_100sdp"
         android:layout_height="wrap_content"
         android:padding="@dimen/_5sdp"
         android:gravity="center"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:id="@+id/fNote1">
 
             <View
@@ -55,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:id="@+id/fNote2">
 
             <View
@@ -75,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:id="@+id/fNote4">
 
             <View
@@ -94,6 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:id="@+id/fNote5">
 
             <View
@@ -113,6 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:id="@+id/fNote6">
 
             <View
@@ -131,6 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:id="@+id/fNote7">
 
             <View
@@ -157,6 +163,7 @@
             android:textColor="@color/purple_700"
             android:textSize="@dimen/_12ssp"
             android:text="Pick Color"
+            android:layout_marginStart="@dimen/_5ssp"
             android:fontFamily="@font/manrope_bold"
             android:maxLines="1"
             android:ellipsize="end"
@@ -165,7 +172,7 @@
 
     <LinearLayout
         android:id="@+id/layoutImage"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_100ssp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,7 +180,7 @@
         android:background="@color/white"
         android:gravity="center"
         android:layout_margin="@dimen/_10sdp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
 
         <ImageView
@@ -203,7 +210,7 @@
 
     <LinearLayout
         android:id="@+id/layoutWebUrl"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_100ssp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +220,7 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
 
         <ImageView
@@ -230,6 +237,7 @@
             app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/_10ssp"
             android:textColor="@color/purple_700"
             android:textSize="@dimen/_12ssp"
             android:text="Add Web Link"
@@ -248,7 +256,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:gravity="center"
         android:visibility="gone"
         android:layout_marginStart="@dimen/_10sdp"
@@ -263,7 +271,7 @@
             android:src="@drawable/ic_delete"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            app:tint="@color/white" />
+            app:tint="@color/purple_700" />
 
         <TextView
             android:layout_width="match_parent"
@@ -271,7 +279,7 @@
             app:layout_constraintTop_toBottomOf="@id/etNoteTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_700"
             android:textSize="@dimen/_12ssp"
             android:text="Delete Note"
             android:fontFamily="@font/manrope_bold"

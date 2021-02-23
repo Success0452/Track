@@ -363,68 +363,7 @@ class CreateNoteFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, 
 
     }
 
-    //    private val BroadcastReceiver : BroadcastReceiver = object :BroadcastReceiver()
-//    {
-//        override fun onReceive(context: Context?, intent: Intent?) {
-//            var actionColor = intent!!.getStringExtra("action")
-//
-//            when (actionColor!!)
-//            {
-//                "Blue" -> {
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//
-//                "Yellow" -> {
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//
-//                "Purple" -> {
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//
-//                "Green" -> {
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//
-//                "Orange" -> {
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//
-//                "Black" -> {
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//                "image" -> {
-//                    readStorageTask()
-//                    layoutWebUrl.visibility = View.GONE
-//                }
-//                "WebUrl" ->{
-//                    layoutWebUrl.visibility = View.VISIBLE
-//                }
-//                "DeleteNote" -> {
-//                    //delete note
-//                    deleteNote()
-//                }
-//
-//                else ->
-//                {
-//                    layoutImage.visibility = View.GONE
-//                    imgNote.visibility = View.GONE
-//                    layoutWebUrl.visibility = View.GONE
-//                    selectedColor = intent.getStringExtra("selectedColor")!!
-//                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
-//                }
-//
-//
-//            }
-//        }
-//
-//    }
+
     override fun onDestroy() {
         LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(BroadcastReceiver)
         super.onDestroy()
