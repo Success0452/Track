@@ -294,7 +294,7 @@ class CreateNoteFragment : BaseFragment(), EasyPermissions.PermissionCallbacks, 
 
             var actionColor = p1!!.getStringExtra("action")
 
-            when(actionColor!!){
+            when(actionColor){
 
                 "Blue" -> {
                     selectedColor = p1.getStringExtra("selectedColor")!!

@@ -1,10 +1,12 @@
 package com.famous.track
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.famous.track.databinding.ActivityMainBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +18,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-     fun replaceFragment (fragment : Fragment, istransition: Boolean)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.naavigation_bar, menu)
+        return true
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+       when (item.itemId) {
+           R.id.nav_settings -> Toast.makeText(this, "Show Settings", Toast.LENGTH_SHORT).show()
+           R.id.nav_developer -> Toast.makeText(this, "Show Developer", Toast.LENGTH_SHORT).show()
+           R.id.nav_share -> Toast.makeText(this, "Show Share", Toast.LENGTH_SHORT).show()
+           R.id.about -> Toast.makeText(this, "Show About", Toast.LENGTH_SHORT).show()
+
+       }
+        return super.onOptionsItemSelected(item)
+    }
+     fun replaceFragment(fragment: Fragment, istransition: Boolean)
     {
         val fragmentTransition = supportFragmentManager.beginTransaction()
 
@@ -24,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         {
             fragmentTransition.setCustomAnimations(android.R.anim.slide_out_right, android.R.anim.slide_in_left)
         }
-        fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName).commit()
+        fragmentTransition.replace(R.id.frame_layout, fragment).addToBackStack(fragment.javaClass.simpleName).commit()
     }
 
     override fun onBackPressed() {
